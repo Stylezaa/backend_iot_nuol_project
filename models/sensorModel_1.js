@@ -7,6 +7,8 @@ const schema = new Schema(
     pH: { type: Number },
     DO: { type: Number },
     EC: { type: Number },
+    latitude: { type: Number },
+    longitude: { type: Number },
     lastupdate: { type: Date, default: Date.now },
   },
   {
