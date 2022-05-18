@@ -1,0 +1,13 @@
+{
+    "name": "Station 1",
+    "wifiName": "IoT",
+    "coordinates": {
+      "latitude": "17.938568",
+      "longitude": "102.625921"
+    },
+    "sensor": {
+      "pH": 4,
+      "DO": 54,
+      "EC": 1145
+    }
+}

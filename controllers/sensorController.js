@@ -1,15 +1,18 @@
-const Sensor = require("../models/sensorModel_1");
+const Sensor = require("../models/sensorModel");
 
-exports.index_1 = async (req, res, next) => {
-  // const sensor = await Sensor.find().sort({ _id: -1 }).limit(1); //get last 5 record
-  const sensor = await Sensor.find().sort({ _id: -1 }).limit(15); //get all record
-  // console.log(sensor);
+exports.getByCount = async (req, res, next) => {
+  
+  const {Count} = req.params;
 
-  res.status(200).json(sensor);
+  const sensor = await Sensor.find().sort({ _id: -1 }).limit(parseInt(Count)).select({id: 1, name: 1, wifiName: 1, sensor: 1, last_update: 1, coordinates: 1});
+
+  res.status(200).json({
+    station_1: sensor
+  });
 };
 
-exports.getAll_1 = async (req, res, next) => {
-  const sensorList = await Sensor.find().sort({ _id: -1 });
+exports.getAll = async (req, res, next) => {
+  const sensor = await Sensor.find().sort({ _id: -1 });
 
-  res.status(200).json(sensorList)
+  res.status(200).json(sensor)
 }

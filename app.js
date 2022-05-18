@@ -14,10 +14,11 @@ var cors = require('cors');
 //require config
 const config = require('./config/index');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 const sensorRouter = require('./routes/sensor');
 const mapRouter = require('./routes/map');
+const chartRouter = require('./routes/chart');
 
 //import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -48,6 +49,7 @@ app.use('/api/user', usersRouter);
 app.use('/api/sensor', sensorRouter);
 // app.use("/map", sensorRouter);
 app.use('/api/map', mapRouter);
+app.use('/api/chart', chartRouter);
 
 //use errorHandler middleware
 app.use(errorHandler);
