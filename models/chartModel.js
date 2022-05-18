@@ -16,7 +16,7 @@ const schema = new Schema(
   {
     toJSON: {virtuals: true},   
     timestamp: true,
-    collection: "chart",
+    collection: "chart_1",
   }
 );
 

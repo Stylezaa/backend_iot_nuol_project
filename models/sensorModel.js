@@ -20,7 +20,7 @@ const schema = new Schema(
   {
     toJSON: {virtuals: true},   
     timestamp: true,
-    collection: "sensor",
+    collection: "sensor_1",
   }
 );
 
