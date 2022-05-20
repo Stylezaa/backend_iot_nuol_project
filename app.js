@@ -4,7 +4,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json();
 
 //passport library
 const passport = require('passport');
@@ -17,7 +16,6 @@ const config = require('./config/index');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const sensorRouter = require('./routes/sensor');
-const mapRouter = require('./routes/map');
 const chartRouter = require('./routes/chart');
 
 //import middleware
@@ -44,11 +42,9 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/api/', indexRouter);
 app.use('/api/user', usersRouter);
 app.use('/api/sensor', sensorRouter);
-// app.use("/map", sensorRouter);
-app.use('/api/map', mapRouter);
 app.use('/api/chart', chartRouter);
 
 //use errorHandler middleware

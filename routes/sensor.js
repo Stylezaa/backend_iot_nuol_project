@@ -7,6 +7,5 @@ const sensorController = require("../controllers/sensorController");
 //http://localhost:8000/sensor
 router.get("/1/filter/:Count", sensorController.getByCount);
 router.get("/1/get/all", sensorController.getAll)
-// router.get("/map", sensorController.map);
 
 module.exports = router;
