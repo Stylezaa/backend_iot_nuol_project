@@ -24,16 +24,6 @@ const schema = new Schema(
   }
 );
 
-// // Duplicate the ID field.
-// Schema.virtual('id').get(function(){
-//   return this._id.toHexString();
-// });
-
-// // Ensure virtual fields are serialised.
-// Schema.set('toJSON', {
-//   virtuals: true
-// });
-
 const sensor = mongoose.model("Sensor", schema);
 
 module.exports = sensor;

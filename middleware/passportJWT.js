@@ -12,8 +12,7 @@ const JwtStrategy = require('passport-jwt').Strategy,
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = config.JWT_SECRET;
-// opts.issuer = "accounts.examplesoft.com";
-// opts.audience = "yoursite.net";
+
 passport.use(
   new JwtStrategy(opts, async (jwt_payload, done) => {
     try {

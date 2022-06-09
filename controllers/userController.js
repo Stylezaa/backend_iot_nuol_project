@@ -50,10 +50,6 @@ exports.register = async (req, res, next) => {
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
 
-  // console.log(typeof req.body.password);
-  // console.log(req.body.email);
-  // console.log(req.body.password);
-
   try {
     //check ວ່າມີ email ນີ້ໃນລະບົບບໍ່
     const user = await User.findOne({ email: email });
@@ -106,14 +102,3 @@ exports.me = (req, res, next) => {
     },
   });
 };
-
-// app.put('/api/logout', authToken, function (req, res) {
-//   const authHeader = req.headers['authorization'];
-//   jwt.sign(authHeader, '', { expiresIn: 1 }, (logout, err) => {
-//     if (logout) {
-//       res.send({ msg: 'You have been Logged Out' });
-//     } else {
-//       res.send({ msg: 'Error' });
-//     }
-//   });
-// });
