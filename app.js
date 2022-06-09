@@ -17,6 +17,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const sensorRouter = require('./routes/sensor');
 const chartRouter = require('./routes/chart');
+const stationRouter = require('./routes/station');
 
 //import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -46,6 +47,7 @@ app.use('/api/', indexRouter);
 app.use('/api/user', usersRouter);
 app.use('/api/sensor', sensorRouter);
 app.use('/api/chart', chartRouter);
+app.use('/api/station', stationRouter);
 
 //use errorHandler middleware
 app.use(errorHandler);
