@@ -1,5 +1,8 @@
 const Sensor = require("../models/sensorModel");
 
+//================================================================
+//===================== For Datagrid Data ========================
+//================================================================
 exports.getByCount = async (req, res, next) => {
   
   const {Count} = req.params;

@@ -3,6 +3,9 @@ const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const config = require('../config/index');
 
+//================================================================
+//===================== For Authentication =======================
+//================================================================
 exports.index = async (req, res, next) => {
   const users = await User.find().select('name email role').sort({ _id: -1 });
 
